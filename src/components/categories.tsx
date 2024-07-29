@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FilterIcon from "../assets/filter.svg";
 import CoseIcon from "../assets/close.svg";
 import { ButtonStatus, Text } from "../constants/appConstants";
@@ -11,16 +11,17 @@ interface Props {
   categories: CategoriesResponse[];
   foodItems: FoodResponse[];
   handleClick: (response: FoodResponse[]) => void;
+  searchFlag: boolean;
 }
 
 const Categories: React.FC<Props> = ({
   categories,
   foodItems,
   handleClick,
+  searchFlag,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<CategoriesResponse>(
-    categories[0],
-  );
+  const [selectedCategory, setSelectedCategory] =
+    useState<CategoriesResponse | null>(categories[0]);
   const isSelected = (category: CategoriesResponse) => {
     if (selectedCategory) {
       return category.name === selectedCategory.name;
@@ -42,6 +43,14 @@ const Categories: React.FC<Props> = ({
       return findByCategory(foodItems, category.id);
     }
   };
+
+  useEffect(() => {
+    if (searchFlag) {
+      setSelectedCategory(null);
+    } else {
+      setSelectedCategory(categories[0]);
+    }
+  }, [searchFlag]);
 
   return (
     <div className="row">
@@ -107,8 +116,10 @@ const Categories: React.FC<Props> = ({
                 buttonText={Text.Apply}
                 buttonStatus={ButtonStatus.Active}
                 handleClick={() => {
-                  handleModalClick();
-                  handleClick(handleCategoryResults(selectedCategory));
+                  if (selectedCategory) {
+                    handleModalClick();
+                    handleClick(handleCategoryResults(selectedCategory));
+                  }
                 }}
                 width="100%"
                 border={true}

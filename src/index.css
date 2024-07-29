@@ -305,6 +305,7 @@ button img {
   width: calc(100% - 32px);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 16px;
+  z-index: 10;
 }
 
 .modal .row {
@@ -327,6 +328,7 @@ button img {
   margin-right: 16px;
   height: 20px;
   width: 20px;
+  background: var(--white);
 }
 
 .modal .filter_buttons {

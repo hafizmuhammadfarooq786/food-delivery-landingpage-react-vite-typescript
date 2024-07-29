@@ -13,6 +13,7 @@ import Loader from "./components/common/loader";
 
 const App: React.FC = React.memo(() => {
   const [loading, setLoading] = useState<boolean>(false);
+  const [searchFlag, setSearchFlag] = useState<boolean>(false);
   const [categories, setCategories] = useState<any>([]);
   const [foodItems, setFoodItems] = useState<any>([]);
   const [trackItem, setTrackItems] = useState<any>([]);
@@ -61,6 +62,7 @@ const App: React.FC = React.memo(() => {
       {/* Search */}
       <Search
         foodItems={foodItems}
+        setSearchFlag={setSearchFlag}
         searchResults={(result: FoodResponse[]) => handleChange(result)}
       />
       {/* Categories */}
@@ -68,6 +70,7 @@ const App: React.FC = React.memo(() => {
         <Categories
           categories={categories}
           foodItems={foodItems}
+          searchFlag={searchFlag}
           handleClick={(result: FoodResponse[]) => handleChange(result)}
         />
       )}

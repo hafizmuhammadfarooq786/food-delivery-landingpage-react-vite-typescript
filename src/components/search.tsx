@@ -9,7 +9,8 @@ interface InputProps {
   foodItems: FoodResponse[];
   height?: number;
   width?: number;
-  searchResults: (res: any) => void;
+  searchResults: (res: FoodResponse[]) => void;
+  setSearchFlag: (status: boolean) => void;
 }
 
 const Search: React.FC<InputProps> = ({
@@ -17,6 +18,7 @@ const Search: React.FC<InputProps> = ({
   height,
   width,
   searchResults,
+  setSearchFlag,
 }) => {
   // Set/Manage Search Input Value State
   const [searchText, setSearchText] = useState<string>("");
@@ -24,6 +26,7 @@ const Search: React.FC<InputProps> = ({
   const handleClose = () => {
     setSearchText("");
     searchResults(foodItems.slice(0, 9));
+    setSearchFlag(false);
   };
 
   return (
@@ -35,6 +38,7 @@ const Search: React.FC<InputProps> = ({
         placeholder={Text.EnterRestaurantName}
         onChange={(e) => {
           setSearchText(e.target.value);
+          setSearchFlag(true);
           if (e.target.value) {
             useDebounce(foodItems, e.target.value, searchResults);
           } else {
