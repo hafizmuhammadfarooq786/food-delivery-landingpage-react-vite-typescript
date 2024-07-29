@@ -1,0 +1,375 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Backgrounds */
+  --bg-slate-dark: #f6f7f9;
+  --bg-slate: #f7f8fa;
+
+  /* Colors */
+  --white: #ffffff;
+  --black: #000000;
+  --yellow: #ffc700;
+  --blue: #00afff;
+  --purple: #8f64ff;
+  --red: #ff696f;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-slate-dark);
+  color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 4rem);
+  padding: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--black);
+  font-family: inherit;
+}
+
+/* Loading Screen */
+.loading_screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.loading_screen p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 24px 0 0;
+}
+
+/* Search Input */
+.search_box {
+  height: 48px;
+  width: 425px;
+  position: relative;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 8px;
+  padding: 4px 8px;
+  background: var(--white);
+  position: relative;
+}
+
+.search_box > img {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translate(8px, -50%);
+}
+
+.search_box > input {
+  width: 80%;
+  height: 96%;
+  outline: none;
+  border: none;
+  padding: 0 16px 0 48px;
+  font-size: 16px;
+  background: var(--white);
+  color: var(--black);
+}
+
+.search_box .close_button {
+  position: absolute;
+  top: 55%;
+  right: 12px;
+  transform: translate(0px, -50%);
+  cursor: pointer;
+}
+
+/* Categories */
+
+.categories {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: max-content;
+  border: 1.5px solid var(--yellow);
+  border-radius: 16px;
+  margin-top: 3.2rem;
+}
+
+.categories > p {
+  flex: 1 1;
+  width: 84px;
+  max-width: 84px;
+  text-align: center;
+  border-left: 1px solid var(--yellow);
+  padding: 12px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.categories > p:first-child {
+  border-left: 0px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.categories > p:last-child {
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.categories p.selected {
+  background: var(--yellow);
+  font-weight: 600;
+}
+
+/* Grid Box */
+
+.gridBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 2rem 0;
+}
+
+.gridBox > .card {
+  flex: 1 1 calc(33.33% - 16px); /* Default to 3 cards per row */
+  max-width: calc(33.33% - 16px);
+}
+
+.card {
+  background: var(--white);
+  color: var(--black);
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+  margin: 16px 0;
+  position: relative;
+}
+
+.card .promotion_bucket {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px 16px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.card .promotion_bucket p {
+  font-size: 16px;
+  color: var(--white);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.card > img {
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  width: 100%;
+  height: 250px;
+  min-height: 250px;
+}
+
+.card > .box {
+  display: grid;
+  gap: 16px;
+  padding: 24px 16px;
+}
+
+.card .slate_box {
+  background: var(--bg-slate);
+  margin: 0px 8px;
+  height: auto;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.card .slate_box:first-child {
+  margin-left: 0px;
+}
+
+.card .slate_box:last-child {
+  margin-right: 8px;
+}
+
+.card .slate_box p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.card .slate_box span img {
+  margin: 4px 6px 0px 0px;
+}
+
+/* Button */
+
+button {
+  outline: none;
+  padding: 12px;
+  border-radius: 8px;
+  background: transparent;
+  color: #000000;
+  font-weight: 700;
+  font-family: inherit;
+  width: fit-content;
+  cursor: pointer;
+}
+
+button img {
+  margin-right: 8px;
+}
+
+/* Responsive Styles */
+.mobile_view {
+  display: none;
+}
+
+.mobile_view .filter_icon {
+  display: flex;
+  position: absolute;
+  top: 32px;
+  right: 24px;
+  background: var(--white);
+  padding: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.mobile_view img {
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  height: fit-content;
+  width: calc(100% - 32px);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 16px;
+}
+
+.modal .row {
+  justify-content: space-between;
+}
+
+.modal .column {
+  margin: 16px 0px 32px;
+}
+
+.modal .category {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.modal .category > input {
+  margin-right: 16px;
+  height: 20px;
+  width: 20px;
+}
+
+.modal .filter_buttons {
+  display: grid;
+  gap: 16px;
+}
+
+/* For screens between 992px and 1120px */
+@media (max-width: 992px) and (min-width: 768px) {
+  .gridBox > .card p {
+    font-size: 14px;
+  }
+}
+
+/* For screens between 768px and 992px */
+@media (max-width: 992px) and (min-width: 768px) {
+  .gridBox > .card {
+    flex: 1 1 calc(50% - 16px); /* 2 cards per row */
+    max-width: calc(50% - 16px);
+  }
+  .categories > p {
+    width: 64px;
+    max-width: 64px;
+    font-size: 12px;
+  }
+}
+
+/* For screens smaller than 786px */
+@media (max-width: 767px) {
+  .categories {
+    display: none;
+  }
+  .gridBox > .card {
+    flex: 1 1 100%; /* 1 card per row */
+    max-width: 100%;
+  }
+  .search_box {
+    width: 300px;
+  }
+  .search_box > input {
+    width: 80%;
+  }
+  .mobile_view {
+    display: flex;
+  }
+}
