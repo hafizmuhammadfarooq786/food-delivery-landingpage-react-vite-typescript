@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# Food Delivery Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern food delivery website built with React, Typescript and Vite. This project demonstrates a responsive and interactive UI for browsing and managing food items, categories, and promotions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Product Listing**: View and interact with a list of food items.
+- **Category Filtering**: Filter food items based on selected categories.
+- **Search Functionality**: Search for food items by name or other criteria.
+- **Pagination**: Load more food items in batches with a "Show More" button.
+- **Promotion Badges**: Display promotional badges on product cards.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: JavaScript library for building user interfaces.
+- **Vite**: Next-generation frontend tooling that focuses on speed and simplicity.
+- **TypeScript**: Strongly typed programming language that builds on JavaScript.
+- **Axios**: Promise-based HTTP client for making API requests.
+- **ESLint**: Linter for identifying and fixing problems in JavaScript code.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+To get started with this project, follow these steps:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/hafizmuhammadfarooq786/food-delivery-website-wego
+   cd food-delivery-website-wego
+   ```
