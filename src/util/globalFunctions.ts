@@ -48,13 +48,13 @@ export const fetchImage = async (
   imageUrl: string,
 ): Promise<string | boolean> => {
   try {
-    const response = await fetch(imageUrl, { mode: "no-cors" });
+    const response = await fetch(imageUrl, { mode: "cors" });
     if (response.ok) {
       return imageUrl;
     } else {
       throw new Error("Image not found");
     }
   } catch (err) {
-    return true;
+    return false;
   }
 };
