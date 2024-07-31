@@ -27,4 +27,6 @@ To get started with this project, follow these steps:
    ```bash
    git clone https://github.com/hafizmuhammadfarooq786/food-delivery-website-wego
    cd food-delivery-website-wego
+   pnpm install
+   pnpm dev
    ```
